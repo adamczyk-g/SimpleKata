@@ -7,20 +7,28 @@ namespace StackKata.Tests
     public class MyStackTests
     {
         [Test]
-        public void TestMethod()
+        public void New_created_stack_is_empty()
         {
-
+            MyStack<int> stack = new MyStack<int>();
+            Assert.IsTrue(stack.IsEmpty());
         }
 
-        public class MyStack<T> : IMyStack<T>
+        [Test]
+        public void New_created_stack_have_not_elements()
         {
-            public MyStack(){}
-            public T Pop() { throw new NotImplementedException(); }
-            public void Push(T item) { throw new NotImplementedException(); }
-            public T Peak() { throw new NotImplementedException(); }
-            public void Clear() { throw new NotImplementedException(); }
-            public int Count() { throw new NotImplementedException(); }
-            public bool IsEmpty() { throw new NotImplementedException(); }
+            MyStack<int> stack = new MyStack<int>();
+            Assert.AreEqual(0, stack.Count());
         }
+    }
+
+    public class MyStack<T> : IMyStack<T>
+    {
+        public MyStack(){}
+        public T Pop() { throw new NotImplementedException(); }
+        public void Push(T item) { throw new NotImplementedException(); }
+        public T Peak() { throw new NotImplementedException(); }
+        public void Clear() { throw new NotImplementedException(); }
+        public int Count() { return 0; }
+        public bool IsEmpty() { return true; }
     }
 }
