@@ -40,6 +40,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMyStack.cs" />
     <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
