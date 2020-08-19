@@ -4,7 +4,7 @@ using System;
 namespace StackKata.Tests
 {
     [TestFixture]
-    public class TestClass
+    public class MyStackTests
     {
         [Test]
         public void TestMethod()
