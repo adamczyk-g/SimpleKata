@@ -44,6 +44,7 @@ namespace StackKata.Tests
         }
     }
 
+
     public class MyStack<T> : IMyStack<T>
     {
         private readonly List<T> innerList = new List<T>();
