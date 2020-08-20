@@ -33,6 +33,14 @@ namespace StackKata.Tests
             MyStack<int> stack = new MyStack<int>();
             Assert.Catch<InvalidOperationException>(() => stack.Peak());
         }
+
+        [Test]
+        public void Empty_stack_after_push_one_element_is_stack_with_one_element()
+        {
+            MyStack<int> stack = new MyStack<int>();
+            stack.Push(123);
+            Assert.AreEqual(1, stack.Count());
+        }
     }
 
     public class MyStack<T> : IMyStack<T>
