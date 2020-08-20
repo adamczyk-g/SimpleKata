@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace StackKata.Tests
 {
@@ -45,12 +46,13 @@ namespace StackKata.Tests
 
     public class MyStack<T> : IMyStack<T>
     {
+        private readonly List<T> innerList = new List<T>();
         public MyStack(){}
         public T Pop() { throw new InvalidOperationException(); }
-        public void Push(T item) { throw new NotImplementedException(); }
+        public void Push(T item) { innerList.Add(item); }
         public T Peak() { throw new InvalidOperationException(); }
         public void Clear() { throw new NotImplementedException(); }
-        public int Count() { return 0; }
+        public int Count() { return innerList.Count; }
         public bool IsEmpty() { return true; }
     }
 }
