@@ -42,8 +42,15 @@ namespace StackKata.Tests
             stack.Push(123);
             Assert.AreEqual(1, stack.Count());
         }
-    }
 
+        [Test]
+        public void Push_element_is_on_top_of_the_stack()
+        {
+            MyStack<int> stack = new MyStack<int>();
+            stack.Push(123);
+            Assert.AreEqual(123, stack.Peak());
+        }
+    }
 
     public class MyStack<T> : IMyStack<T>
     {
