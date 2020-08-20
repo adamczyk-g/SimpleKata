@@ -58,7 +58,7 @@ namespace StackKata.Tests
         public MyStack(){}
         public T Pop() { throw new InvalidOperationException(); }
         public void Push(T item) { innerList.Add(item); }
-        public T Peak() { throw new InvalidOperationException(); }
+        public T Peak() { if (IsEmpty()) throw new InvalidOperationException(); else return innerList[Count() - 1]; }
         public void Clear() { throw new NotImplementedException(); }
         public int Count() { return innerList.Count; }
         public bool IsEmpty() { return true; }
