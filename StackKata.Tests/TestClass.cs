@@ -19,12 +19,19 @@ namespace StackKata.Tests
             MyStack<int> stack = new MyStack<int>();
             Assert.AreEqual(0, stack.Count());
         }
+
+        [Test]
+        public void Pop_empty_stack_throw_exception()
+        {
+            MyStack<int> stack = new MyStack<int>();
+            Assert.Catch<InvalidOperationException>(() => stack.Pop());
+        }
     }
 
     public class MyStack<T> : IMyStack<T>
     {
         public MyStack(){}
-        public T Pop() { throw new NotImplementedException(); }
+        public T Pop() { throw new InvalidOperationException(); }
         public void Push(T item) { throw new NotImplementedException(); }
         public T Peak() { throw new NotImplementedException(); }
         public void Clear() { throw new NotImplementedException(); }
